@@ -47,22 +47,22 @@ with tab1:
     x7 = RestingECG_encoder.transform([x7])[0]
 
     #'MaxHR'
-    #x8 = st.slider('MaxHR', 0, 202)
+    x8 = st.slider('MaxHR', 0, 202)
 
     #'ExerciseAngina'
     x9 = st.radio('Select ExerciseAngina', ExerciseAngina_encoder.classes_)
     x9 = ExerciseAngina_encoder.transform([x9])[0]
 
     #'Oldpeak'
-    #x10 = st.slider('Oldpeak', 0, 0.5, 1,1.5,2,2.5,3,3.5)
+    x10 = st.slider('Oldpeak', 0, 6)
 
     #'ST_Slope'
     x11 = st.radio('Select ST_Slope', ST_Slope_encoder.classes_)
     x11 = ST_Slope_encoder.transform([x11])[0]
 
-    x_new = pd.DataFrame(data=np.array([x1, x2, x3, x4, x5, x6, x7, x9, x11]).reshape(1,-1), 
+    x_new = pd.DataFrame(data=np.array([x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11]).reshape(1,-1), 
                  columns=['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
-                           'RestingECG', 'ExerciseAngina',  'ST_Slope'])
+                           'RestingECG', 'MaxHR', 'ExerciseAngina', 'Oldpeak', 'ST_Slope'])
 
     pred = model.predict(x_new)
 
