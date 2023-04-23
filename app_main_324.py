@@ -60,7 +60,7 @@ with tab1:
     x11 = st.radio('Select ST_Slope', ST_Slope_encoder.classes_)
     x11 = ST_Slope_encoder.transform([x11])[0]
 
-    x_new = pd.DataFrame(data=np.array([x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11]).reshape(1,-1), 
+    x_new = pd.DataFrame(data=np.array([x1, x2, x3, x4, x5, x6, x7, x9, x11]).reshape(1,-1), 
                  columns=['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol', 'FastingBS',
                            'RestingECG', 'ExerciseAngina',  'ST_Slope'])
 
