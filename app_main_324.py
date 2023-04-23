@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 
-model = pickle.load(open('model.heart.sav','rb'))
+model = pickle.load(open('model.heart.sav','wb'))
 
 Sex_encoder = pickle.load(open('encoder.Sex.sav','rb'))
 ChestPainType_encoder = pickle.load(open('encoder.ChestPainType.sav','rb'))
