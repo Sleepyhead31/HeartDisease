@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 
-model = pickle.load(open('model.heart.sav','wb'))
+model = pickle.load(open('model.heart.sav','rb'))
 
 Sex_encoder = pickle.load(open('encoder.Sex.sav','rb'))
 ChestPainType_encoder = pickle.load(open('encoder.ChestPainType.sav','rb'))
@@ -15,7 +15,7 @@ RestingECG_encoder = pickle.load(open('encoder.RestingECG.sav','rb'))
 ExerciseAngina_encoder = pickle.load(open('encoder.ExerciseAngina.sav','rb'))
 ST_Slope_encoder = pickle.load(open('encoder.ST_Slope.sav','rb'))
 
-evaluations = pickle.load(open('evals.all.sav','rb'))
+evaluations = pickle.load(open('evals.all.sav','wb'))
 
 st.title('Heart Disease Prection')
 
