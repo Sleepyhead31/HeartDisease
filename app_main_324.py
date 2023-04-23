@@ -7,7 +7,6 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 model = pickle.load(open('model.heart.sav','rb'))
-
 Sex_encoder = pickle.load(open('encoder.Sex.sav','rb'))
 ChestPainType_encoder = pickle.load(open('encoder.ChestPainType.sav','rb'))
 RestingECG_encoder = pickle.load(open('encoder.RestingECG.sav','rb'))
@@ -48,14 +47,14 @@ with tab1:
     x7 = RestingECG_encoder.transform([x7])[0]
 
     #'MaxHR'
-    #x8 = ...
+    x8 = st.slider('MaxHR', 0, 202)
 
     #'ExerciseAngina'
     x9 = st.radio('Select ExerciseAngina', ExerciseAngina_encoder.classes_)
     x9 = ExerciseAngina_encoder.transform([x9])[0]
 
     #'Oldpeak'
-    #x10 = ...
+    x10 = st.slider('Oldpeak', 0, 0.5, 1,1.5,2,2.5,3,3.5)
 
     #'ST_Slope'
     x11 = st.radio('Select ST_Slope', ST_Slope_encoder.classes_)
